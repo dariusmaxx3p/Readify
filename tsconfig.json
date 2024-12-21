@@ -19,6 +19,13 @@
       }
     ],
     "paths": {
+      "@components/*": ["./components/*"],
+      "@widgets/*": ["./widgets/*"],
+      "@styles/*": ["./styles/*"],
+      "@hooks/*": ["./hooks/*"],
+      "@features/*": ["./features/*"],
+      "@lib/*": ["./lib/*"],
+      "@pages/*": ["./pages/*"],
       "@/*": ["./*"]
     }
   },
