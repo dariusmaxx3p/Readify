@@ -13,6 +13,9 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "types": ["reflect-metadata"],
     "plugins": [
       {
         "name": "next"
@@ -28,6 +31,7 @@
       "@pages/*": ["./pages/*"],
       "@server/lib/*": ["./server/lib/*"],
       "@server/features/*": ["./server/features/*"],
+      "@blocks/*": ["./blocks/*"],
       "@/*": ["./*"]
     }
   },

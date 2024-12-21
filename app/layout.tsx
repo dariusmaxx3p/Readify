@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono, Funnel_Display } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@components/theme-provider";
+import { AppContextProvider } from "@/contexts/app-context";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,9 +28,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased ${funnelDisplay.variable} bg-brilliant`}
       >
-        <ThemeProvider attribute={"class"} defaultTheme="dark">
-          {children}
-        </ThemeProvider>
+        <AppContextProvider>
+          <ThemeProvider attribute={"class"} defaultTheme="dark">
+            {children}
+          </ThemeProvider>
+        </AppContextProvider>
       </body>
     </html>
   );

@@ -1,1 +1,7 @@
-export default {} as const;
+export default {
+  pages: {
+    home: "Trang chủ",
+    books: "Sách",
+    about: "Về chúng tôi",
+  },
+} as const;

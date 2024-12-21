@@ -1,6 +1,6 @@
 import { getCurrentLocale } from "@/locales/server";
 import { DEFAULT_METADATA_EN, DEFAULT_METADATA_VI } from "@/misc/default";
-import Logo from "@components/logo";
+import HomePage from "@pages/home-page";
 import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -12,9 +12,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Home() {
-  return (
-    <div>
-      <Logo />
-    </div>
-  );
+  return <HomePage />;
 }
