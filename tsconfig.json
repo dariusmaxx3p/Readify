@@ -26,6 +26,8 @@
       "@features/*": ["./features/*"],
       "@lib/*": ["./lib/*"],
       "@pages/*": ["./pages/*"],
+      "@server/lib/*": ["./server/lib/*"],
+      "@server/features/*": ["./server/features/*"],
       "@/*": ["./*"]
     }
   },
