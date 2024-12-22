@@ -2,6 +2,7 @@ import { Book } from "@/server/domain/book";
 import path from "path";
 import { promises as fs } from "fs";
 import { injectable } from "inversify";
+import { generate } from "short-uuid";
 import "reflect-metadata";
 
 export interface IGenService {
@@ -423,7 +424,7 @@ export class GenService implements IGenService {
 
   private genBook(): Book {
     return {
-      id: Math.random().toString(36).substring(7),
+      id: generate(),
       title: this.genTitle(),
       subtitle: this.genSubtitle(),
       description: this.genDescription(),

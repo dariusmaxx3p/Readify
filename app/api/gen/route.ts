@@ -13,19 +13,21 @@ export async function GET(req: Request) {
   const url = new URL(req.url);
   const numBooks = url.searchParams.get("numBooks");
   const chunkSize = url.searchParams.get("chunkSize");
+  const DEFAULT_NUM_BOOKS = 10_000;
+  const DEFAULT_CHUNK_SIZE = 1_000;
 
   const genService = readifyContainer.get<IGenService>(KEYS.GEN_SERVICE);
   await genService.genAndSaveBooks(
-    Number(numBooks ?? 100_000),
-    Number(chunkSize ?? 10_000),
+    Number(numBooks ?? DEFAULT_NUM_BOOKS),
+    Number(chunkSize ?? DEFAULT_CHUNK_SIZE),
     "books"
   );
 
   return Response.json({
     message: "Books generated and saved",
     data: {
-      numBooks: numBooks ?? 100_000,
-      chunkSize: chunkSize ?? 1_000,
+      numBooks: numBooks ?? DEFAULT_NUM_BOOKS,
+      chunkSize: chunkSize ?? DEFAULT_CHUNK_SIZE,
     },
   });
 }
