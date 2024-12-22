@@ -1,11 +1,12 @@
 "use client";
 
 import Header from "@blocks/header";
+import { motion } from "motion/react";
 
 export default function HomePage() {
   return (
-    <div>
+    <motion.div className="home-page flex flex-col">
       <Header />
-    </div>
+    </motion.div>
   );
 }

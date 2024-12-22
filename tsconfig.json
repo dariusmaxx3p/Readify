@@ -28,10 +28,11 @@
       "@hooks/*": ["./hooks/*"],
       "@features/*": ["./features/*"],
       "@lib/*": ["./lib/*"],
-      "@pages/*": ["./pages/*"],
+      "@pages/*": ["./components/pages/*"],
       "@server/lib/*": ["./server/lib/*"],
       "@server/features/*": ["./server/features/*"],
-      "@blocks/*": ["./blocks/*"],
+      "@blocks/*": ["./components/blocks/*"],
+      "@ui/*": ["./components/ui/*"],
       "@/*": ["./*"]
     }
   },

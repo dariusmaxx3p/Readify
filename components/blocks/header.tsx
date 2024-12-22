@@ -1,6 +1,6 @@
 "use client";
 
-import Logo from "@components/logo";
+import Logo from "@ui/logo";
 import { motion } from "motion/react";
 import Navbar from "./navbar";
 import { ChangeMode } from "./change-mode";
