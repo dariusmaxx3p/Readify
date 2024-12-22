@@ -2,6 +2,7 @@ import readifyContainer from "@/server/container";
 import { KEYS } from "@/server/misc/constants";
 import { IBooksService } from "@server/features/books/books.service";
 import { NextRequest } from "next/server";
+import "reflect-metadata";
 
 export async function GET(req: NextRequest) {
   const startTime = Date.now();
