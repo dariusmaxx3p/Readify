@@ -382,6 +382,110 @@ const BOOK_GENRES = [
   "Bizarro Fiction",
 ];
 
+const BOOK_QUOTES = [
+  "In the quiet moments, our true selves whisper their secrets.",
+  "Every sunset carries a promise of a new dawn.",
+  "The heart remembers what the mind forgets.",
+  "Dreams are the silent architects of our future.",
+  "Time weaves stories into the fabric of our lives.",
+  "Courage is the shadow that follows us in the darkest nights.",
+  "Memories are the stars that light up our inner universe.",
+  "Hope is the ember that refuses to die.",
+  "Words can build bridges or walls; choose them wisely.",
+  "Love is the compass that guides us through uncertainty.",
+  "Silence often speaks louder than the loudest words.",
+  "Every end is a new beginning in disguise.",
+  "The soul dances to the rhythm of its own heartbeat.",
+  "Wisdom grows from the seeds of experience.",
+  "Beauty resides in the eye of the beholder's heart.",
+  "Patience is the art of finding peace in the wait.",
+  "Every scar tells a story of resilience.",
+  "Laughter is the melody of a joyful spirit.",
+  "Change is the only constant in the river of life.",
+  "Kindness is the language that transcends all barriers.",
+  "The journey inward reveals the vastness of the soul.",
+  "Stars cannot shine without darkness.",
+  "Embrace the unknown, for it holds endless possibilities.",
+  "Gratitude turns what we have into enough.",
+  "The mind is a garden; cultivate it with positive thoughts.",
+  "Faith is the light that guides us through the storm.",
+  "Every chapter of life adds depth to our story.",
+  "The heart's compass always points to love.",
+  "Adversity is the forge in which character is shaped.",
+  "Happiness is found in the simplest of moments.",
+  "Echoes of the past shape the melodies of today.",
+  "Integrity is the foundation of true strength.",
+  "Each day is a blank page waiting to be written.",
+  "The essence of life is found in its fleeting moments.",
+  "Curiosity is the spark that ignites discovery.",
+  "Peace begins within, radiating outward.",
+  "The heart never forgets its true desires.",
+  "Success is measured by the journey, not the destination.",
+  "Every breath is a gift of renewal.",
+  "Nature whispers the secrets of the universe.",
+  "The soul's reflection is seen in acts of kindness.",
+  "Perseverance turns dreams into reality.",
+  "Love's true power lies in its ability to heal.",
+  "Every moment holds the potential for transformation.",
+  "The mind's horizon expands with every new thought.",
+  "Joy is the sunshine that brightens the darkest days.",
+  "Silence is the canvas upon which thoughts are painted.",
+  "Hope is the anchor that steadies the heart.",
+  "Every step forward is a step toward self-discovery.",
+  "The beauty of life is found in its unpredictability.",
+  "Trust the journey, even when you do not understand it.",
+  "Love is the thread that weaves humanity together.",
+  "In every ending lies the seed of a new beginning.",
+  "The spirit thrives on moments of stillness.",
+  "Kindness is the echo of a compassionate soul.",
+  "Every sunrise brings a chance to start anew.",
+  "Wisdom is listening to the whispers of the heart.",
+  "The path to enlightenment is paved with self-awareness.",
+  "Happiness blooms where gratitude is planted.",
+  "Strength is found in embracing vulnerability.",
+  "The universe dances to the rhythm of our dreams.",
+  "Every heartache is a lesson in love.",
+  "Creativity flows from the wellspring of the soul.",
+  "Patience is the bridge between desire and achievement.",
+  "The essence of life is captured in fleeting moments.",
+  "Love's true essence is found in selfless acts.",
+  "Every challenge is an opportunity in disguise.",
+  "The heart's language is spoken through actions.",
+  "True wisdom lies in knowing oneself.",
+  "Life's tapestry is woven with threads of joy and sorrow.",
+  "Gratitude transforms ordinary days into blessings.",
+  "The journey of a thousand miles begins with a single step.",
+  "Hope is the beacon that lights our way.",
+  "Every soul carries a unique melody.",
+  "Love transcends the boundaries of time and space.",
+  "The heart's resilience is its greatest strength.",
+  "Dreams are the seeds from which realities grow.",
+  "Peace is found in the harmony of the soul.",
+  "Every encounter is a lesson in life's grand design.",
+  "The spirit soars when freed from fear.",
+  "True beauty is reflected in a kind heart.",
+  "Life's true riches are found in relationships.",
+  "Courage is facing the unknown with an open heart.",
+  "The essence of joy is found in giving.",
+  "Every sunrise is a reminder of endless possibilities.",
+  "Love's light dispels the shadows of doubt.",
+  "The journey within is the most profound adventure.",
+  "Hope ignites the spark of change.",
+  "Every heartbeat is a testament to life's fragility.",
+  "Wisdom whispers in the silence of reflection.",
+  "True strength is gentle and unwavering.",
+  "Life's symphony is composed of diverse melodies.",
+  "The heart's truth is found in its deepest desires.",
+  "Embrace the ebb and flow of life's tides.",
+  "Joy resides in the present moment.",
+  "Every soul has a story worth telling.",
+  "Love's journey is endless and boundless.",
+  "The light within illuminates the darkest paths.",
+  "Patience nurtures the seeds of growth.",
+  "In every whisper of the wind lies a story untold."
+];
+
+
 @injectable()
 export class GenService implements IGenService {
   async genAndSaveBooks(
@@ -435,7 +539,19 @@ export class GenService implements IGenService {
       edition: this.genEdition(),
       publishDate: this.genPublishDate(),
       coverImg: this.genCoverImg(),
+      quotes: this.genQuotes(),
     };
+  }
+
+  private genQuotes(): string[] {
+    const quotes = [];
+    const numQuotes = Math.floor(Math.random() * 3) + 1;
+    for (let i = 0; i < numQuotes; i++) {
+      quotes.push(
+        BOOK_QUOTES[Math.floor(Math.random() * BOOK_QUOTES.length)]
+      );
+    }
+    return quotes;
   }
 
   private genTitle(): string {

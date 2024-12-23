@@ -10,4 +10,5 @@ export type Book = {
   edition: string;
   publishDate: string;
   coverImg?: string[];
+  quotes: string[];
 };
